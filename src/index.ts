@@ -1,15 +1,12 @@
 import fs from 'fs';
 import { letterToCodeMap } from './alphabet';
-import { Arguments, getArguments } from './arguments';
-import * as yargs from 'yargs';
 
 async function start() {
-  const config = getArguments();
-  read(config);
+
 }
 
-function read(config: Arguments) {
-  
+function read() {
+
 }
 
 function process() {
@@ -20,8 +17,8 @@ function process() {
 //   }).join('');
 }
 
-function write(config: Arguments, output: string) {
-  console.log(output);
+function write() {
+
 }
 
 start();
