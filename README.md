@@ -14,5 +14,5 @@ yarn build
 
 ### Run using ts-node:
 ```shell
-yarn run
+yarn run [arguments]
 ```
