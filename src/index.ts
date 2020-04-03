@@ -1,23 +1,21 @@
-import fs from 'fs';
-import { letterToCodeMap } from './alphabet';
+import { red } from 'chalk';
+import { getArguments } from './arguments';
+import { processInput, read, write } from './operations';
 
 async function start() {
+    try {
+        // Get arguments
+        getArguments();
+        // Get from input file/command line
+        const input = await read();
+        // Encode/Decode
+        const output = processInput(input);
+        // Send to output file/print to command line
+        await write(output);
+    } catch (error) {
+        console.log(red(error.message));
+    }
 
-}
-
-function read() {
-
-}
-
-function process() {
-//   const input: string = await fs.promises.readFile('./input/input.txt', { encoding: 'utf8' });
-//   const coded = input.split('').map((letter) => {
-//     const code = letterToCodeMap.get(letter.toUpperCase());
-//     return code ? code : letter;
-//   }).join('');
-}
-
-function write() {
 
 }
 

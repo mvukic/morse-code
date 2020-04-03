@@ -1,3 +1,7 @@
 # morse-code
 
 Morse code encoder/decoder written in typescript
+
+```
+node morse-code --help
+```
