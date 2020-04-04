@@ -1,10 +1,10 @@
 import { program } from 'commander';
-import { version } from './version';
+import { morseVersion } from './version';
 import type { MorseArgs } from './args.type';
 
 function setupArguments() {
   program
-    .version(version)
+    .version(morseVersion)
     .description('Encode/decode from/to Morse code')
     .name('morse')
     .usage('[arguments]')

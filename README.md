@@ -4,7 +4,7 @@ Morse code encoder/decoder written in Typescript.
 
 ### Usage:
 ```shell
-node morse-code --help
+node morse --help
 ```
 
 ### Build:
@@ -13,12 +13,12 @@ yarn build
 ```
 
 ```shell
-node ./dist/index.js -op encode -if ./data/input.txt -of ./data/encoded.txt
+node ./dist/morse.js -op encode -if ./data/input.txt -of ./data/encoded.txt
 ```
 
 ### Run using ts-node:
 ```shell
-yarn run [arguments]
+yarn run-file [arguments]
 ```
 
 ### Try it on sample data
