@@ -1,4 +1,4 @@
-export const letterToCodeMap: Map<string, string> = new Map([
+const lettersAndCodes: [string, string][] = [
   ['A', '.-'],
   ['B', '-...'],
   ['C', '-.-.'],
@@ -56,4 +56,11 @@ export const letterToCodeMap: Map<string, string> = new Map([
   [' ', ' '],
   ['\n', '\n'],
   ['\n\r', '\n\r'],
-]);
+];
+
+export const letterToCodeMap: Map<string, string> = new Map(lettersAndCodes);
+
+export const codeToLetterMap: Map<string, string> = new Map(
+  // Switch key-value places
+  lettersAndCodes.map(([letter, code]) => [code, letter])
+);

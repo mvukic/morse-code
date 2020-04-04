@@ -14,6 +14,7 @@ async function start() {
         await write(output);
     } catch (error) {
         console.log(red(error.message));
+        console.log('Try morse --help');
     }
 
 

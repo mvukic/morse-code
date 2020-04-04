@@ -7,9 +7,9 @@ function setupArguments() {
     .version(version)
     .description('Encode/decode from/to Morse code')
     .name('morse')
-    .usage('[options]')
+    .usage('[arguments]')
     .option('-d, --debug', 'prints intermediate steps', false)
-    .option('-o, --operation <operation>', 'decode or encode', 'encode')
+    .option('-op, --operation <operation>', 'decode or encode', 'encode')
     .option('-if, --input-file <path>', 'input file path')
     .option('-of, --output-file <path>', 'output file location')
     .option('-id, --input-data <string>', 'data passed from command line');
@@ -17,13 +17,16 @@ function setupArguments() {
 
 function parseArguments() {
   program.parse(process.argv);
+  if (process.argv.length <= 2) {
+    throw new Error('No arguments specified!');
+  }
 }
 
 function setupListeners() {
   program.on('--help', () => {
     console.log();
     console.log('Usage:');
-    console.log('    $ node morse ...');
+    console.log('    $ node morse [arguments]');
   });
 }
 

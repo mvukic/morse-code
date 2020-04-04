@@ -1,20 +1,24 @@
 {
-  "name": "morse-code",
+  "name": "morse",
   "version": "1.0.0",
-  "description": "Morse code converter",
-  "main": "index.js",
+  "description": "Simple morse code encoder/decoder",
+  "main": "dist/morse.js",
   "author": "mvukic",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "run-file": "./node_modules/.bin/ts-node src/index.ts",
-    "build": "./node_modules/.bin/tsc --project .\\tsconfig.json"
+    "run-file": "./node_modules/.bin/ts-node src/morse.ts",
+    "build:clean": "./node_modules/.bin/rimraf ./dist",
+    "build:compile": "./node_modules/.bin/tsc --project .\\tsconfig.json",
+    "build": "yarn build:clean && yarn build:compile",
+    "build:run": "yarn build && node ./dist/morse.js"
   },
   "devDependencies": {
     "@types/node": "^13.11.0",
     "ts-node": "^8.8.1",
     "tslint": "^6.1.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "rimraf": "3.0.2"
   },
   "dependencies": {
     "commander": "^5.0.0",
