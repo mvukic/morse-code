@@ -1,5 +1,7 @@
 # morse
 
+![Node.js CI](https://github.com/mvukic/morse-code/workflows/Node.js%20CI/badge.svg)
+
 Morse code encoder/decoder written in Typescript.
 
 ### Usage:
