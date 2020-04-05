@@ -25,10 +25,15 @@ describe('Morse parser tests', () => {
 
     describe('Correctly encode values', () => {
 
+        let parser: MorseParser;
+
+        beforeAll(async () => {
+            parser = new MorseParser()
+        });
+
         test.each(encodingData)('%s -> %s', async (input, output) => {
-            const parser = new MorseParser();
-            const args: MorseArgs = getDefaultMorseArgs({ inputData: input });
             console.log = jest.fn();
+            const args: MorseArgs = getDefaultMorseArgs({ inputData: input, operation: 'encode' });
             await parser.run(args);
             expect(console.log).toHaveBeenCalledWith(output.toUpperCase());
         });
@@ -37,10 +42,15 @@ describe('Morse parser tests', () => {
 
     describe('Correctly decode values', () => {
 
+        let parser: MorseParser;
+
+        beforeAll(async () => {
+            parser = new MorseParser()
+        });
+
         test.each(decodingdata)('%s -> %s', async (input, output) => {
-            const parser = new MorseParser();
-            const args: MorseArgs = getDefaultMorseArgs({ inputData: input, operation: 'decode' });
             console.log = jest.fn();
+            const args: MorseArgs = getDefaultMorseArgs({ inputData: input, operation: 'decode' });
             await parser.run(args);
             expect(console.log).toHaveBeenCalledWith(output.toUpperCase());
         });
