@@ -7,7 +7,7 @@ Morse code encoder/decoder written in Typescript.
 node morse --help
 ```
 
-### Build into dist folder:
+### Build:
 ```shell
 yarn build
 ```
@@ -20,6 +20,11 @@ yarn build:run [arguments]
 ### Run using ts-node:
 ```shell
 yarn run-file [arguments]
+```
+
+### Test:
+```shell
+yarn test
 ```
 
 ### Try it on sample data

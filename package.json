@@ -11,16 +11,16 @@
     "build:clean": "./node_modules/.bin/rimraf ./dist",
     "build:compile": "./node_modules/.bin/tsc --project .\\tsconfig.json",
     "build": "yarn build:clean && yarn build:compile",
-    "build:run": "yarn build && node ./dist/morse.js"
+    "build:run": "yarn build && node ./dist/morse.js",
+    "test": "yarn jest"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/node": "^13.11.0",
-    "babel-jest": "^25.2.6",
     "jest": "^25.2.7",
     "rimraf": "3.0.2",
     "ts-jest": "^25.3.1",
-    "ts-node": "^8.8.1",
+    "ts-node": "^8.8.2",
     "tslint": "^6.1.1",
     "typescript": "^3.8.3"
   },
