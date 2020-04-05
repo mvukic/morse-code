@@ -1,4 +1,4 @@
-# morse-code
+# morse
 
 Morse code encoder/decoder written in Typescript.
 
@@ -7,13 +7,14 @@ Morse code encoder/decoder written in Typescript.
 node morse --help
 ```
 
-### Build:
+### Build into dist folder:
 ```shell
 yarn build
 ```
 
+### Build and run:
 ```shell
-node ./dist/morse.js -op encode -if ./data/input.txt -of ./data/encoded.txt
+yarn build:run [arguments]
 ```
 
 ### Run using ts-node:

@@ -1,8 +1,7 @@
 import { promises } from 'fs';
-import { getProgramAsMorseArguments } from '../arguments';
+import type { MorseArgs } from '../args.type';
 
-export async function read(): Promise<string[]> {
-    const args = getProgramAsMorseArguments();
+export async function read(args: MorseArgs): Promise<string[]> {
     if (!args.inputFile && !args.inputData) {
         throw new Error('At least one input has to be defined!');
     }

@@ -1,11 +1,10 @@
-import { letterToCodeMap, codeToLetterMap } from '../alphabet';
-import { getProgramAsMorseArguments } from '../arguments';
+import { letterToCodeMap, codeToLetterMap } from '../data/alphabet';
+import type { MorseArgs } from '../args.type';
 
 const CHAR_SPACE = ' ';
 const WORD_SPACE = '   ';
 
-export function processInput(lines: string[]): string[] {
-    const args = getProgramAsMorseArguments();
+export function processInput(args: MorseArgs, lines: string[]): string[] {
     return args.operation === 'encode' ? encode(lines) : decode(lines);
 }
 
@@ -26,7 +25,7 @@ function decode(lines: string[]): string[] {
     return lines.map(line => {
         // Decode and join each word with a space
         return line.split(WORD_SPACE).map(word => {
-            // Decode wach char and join them
+            // Decode each char and join them
             return word.split(CHAR_SPACE).map(char => codeToLetterMap.get(char)).join('');
         }).join(' ');
     });
